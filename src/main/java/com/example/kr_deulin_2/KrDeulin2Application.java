@@ -1,0 +1,13 @@
+package com.example.kr_deulin_2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class KrDeulin2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(KrDeulin2Application.class, args);
+    }
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FSM_ST_M</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type ="text/javascript" src="/js/FsmJS.js"></script>
+    <script type ="text/javascript" src="/js/ServiceJS.js"></script>
+    <link rel="stylesheet" href="/css/ButtonCSS.css">
+</head>
+<body>
+<div>
+    <div class="table-tab">
+        <h4 align="center">АВТОМОЙКА</h4>
+        <div class="card-body text-center">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Состояние</th>
+                    <th>Пена</th>
+                    <th>Сушка</th>
+                    <th>Вода</th>
+                    <th>Воск</th>
+                </tr>
+                </thead>
+                <tbody id = "fsm">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="for_button">
+    <div align="center">
+        <button onclick="turnOn()">ON</button>
+        <button onclick="turnOff()">OFF</button>
+        <button onclick="turnOnlyWater()">Вода</button>
+        <button onclick="turnWaterFoam()">Вода + Пена</button>
+        <button onclick="turnWaterFoamDrying()">Вода + Пена + Сушка</button>
+        <button onclick="turnWaterWax()">Вода + Воск</button>
+        <button onclick="turnWaterFoamWax()">Вода + Пена + Воск</button>
+        <button onclick="added()">Добавить</button>
+    </div>
+</div>
+
+<div>
+    <div class="table-tab">
+        <h4 align="center">Актуальные услуги</h4>
+        <div class="card-body text-center">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Сервис id</th>
+                    <th>Название услуги</th>
+                    <th>Цена услуги</th>
+                </tr>
+                </thead>
+                <tbody id = "fsmService">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

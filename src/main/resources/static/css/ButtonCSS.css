@@ -1,0 +1,17 @@
+button {
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 20px;
+    border: black;
+    background: silver;
+}
+
+table {
+    background: silver;
+    text-align: center;
+}
+
+h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
