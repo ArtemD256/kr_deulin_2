@@ -188,23 +188,36 @@ public class Fsm {
                 Thread.sleep(7000);
                 statement = Statement.READY;
             }
+            case CheckFoam -> {
+                if (isFoam < 100) {
+                    throw new Exception("Foam not found!");
+                }
+            }
+            case CheckWax -> {
+                if (isWax < 100) {
+                    throw new Exception("Wax not found!!");
+                }
+            }
         }
     }
     public void stepTwo(Step event) throws Exception {
         switch (event){
             case waterAndFoam -> {
+                this.step(Event.CheckFoam);
                 this.stepTwo(Event.go_pay,2);
                 this.step(Event.TurnOnTheWater);
                 this.step(Event.TurnOnTheFoam);
                 this.step(Event.TurnOnTheWater);
             }
             case waterAndWax -> {
+                this.step(Event.CheckWax);
                 this.stepTwo(Event.go_pay,3);
                 this.step(Event.TurnOnTheWater);
                 this.step(Event.TurnOnWax);
                 this.step(Event.TurnOnTheWater);
             }
             case waterFoamDrying -> {
+                this.step(Event.CheckFoam);
                 this.stepTwo(Event.go_pay,4);
                 this.step(Event.TurnOnTheWater);
                 this.step(Event.TurnOnTheFoam);
@@ -212,6 +225,8 @@ public class Fsm {
                 this.step(Event.TurnOnDrying);
             }
             case waterFoamWax -> {
+                this.step(Event.CheckFoam);
+                this.step(Event.CheckWax);
                 this.stepTwo(Event.go_pay,4);
                 this.step(Event.TurnOnTheWater);
                 this.step(Event.TurnOnTheFoam);
